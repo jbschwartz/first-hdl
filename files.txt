@@ -1,0 +1,2 @@
+../src/gates.v
+../tests/gates_tb.v
