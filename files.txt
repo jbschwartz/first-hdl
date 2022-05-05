@@ -1,2 +1,4 @@
+../src/adders.v
 ../src/gates.v
+../tests/adders_tb.v
 ../tests/gates_tb.v
