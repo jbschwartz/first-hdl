@@ -61,3 +61,36 @@ module _xor(
     _and _and(.a(a_or_b), .b(not_a_and_not_b), .out(out));
 
 endmodule
+
+module mux(
+    input wire a,
+    input wire b,
+    input wire sel,
+    output wire out
+    );
+
+    wire not_sel, a_and_not_sel, b_and_sel;
+
+    _not _not(.in(sel), .out(not_sel));
+    _and _anda(.a(a), .b(not_sel), .out(a_and_not_sel));
+    _and _andb(.a(b), .b(sel), .out(b_and_sel));
+
+    _or _or(.a(a_and_not_sel), .b(b_and_sel), .out(out));
+
+endmodule
+
+module demux(
+    input wire in,
+    input wire sel,
+    output wire a,
+    output wire b
+    );
+
+    wire not_sel;
+
+    _not _not(.in(sel), .out(not_sel));
+
+    _and _anda(.a(in), .b(not_sel), .out(a));
+    _and _andb(.a(in), .b(sel), .out(b));
+
+endmodule
