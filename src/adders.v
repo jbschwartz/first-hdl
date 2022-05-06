@@ -1,8 +1,8 @@
 module half_adder(
-    input a,
-    input b,
-    output carry,
-    output sum
+    input wire a,
+    input wire b,
+    output wire carry,
+    output wire sum
     );
 
     _xor _xor(.a(a), .b(b), .out(sum));
@@ -11,11 +11,11 @@ module half_adder(
 endmodule
 
 module adder(
-    input a,
-    input b,
-    input c,
-    output carry,
-    output sum
+    input wire a,
+    input wire b,
+    input wire c,
+    output wire carry,
+    output wire sum
     );
 
     wire first_sum, first_carry, second_carry;

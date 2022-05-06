@@ -2,9 +2,9 @@
 // This is a learning exercise (following Nand2Tetris).
 
 module _nand(
-    input a,
-    input b,
-    output out
+    input wire a,
+    input wire b,
+    output wire out
     );
 
     // Define using builtin Verilog code since we will use this as the fundamental building block.
@@ -14,7 +14,7 @@ endmodule
 
 module _not(
     input in,
-    output out
+    output wire out
     );
 
     _nand _nand(.a(in), .b(in), .out(out));
@@ -22,9 +22,9 @@ module _not(
 endmodule
 
 module _and(
-    input a,
-    input b,
-    output out
+    input wire a,
+    input wire b,
+    output wire out
     );
 
     wire w;
@@ -35,9 +35,9 @@ module _and(
 endmodule
 
 module _or(
-    input a,
-    input b,
-    output out
+    input wire a,
+    input wire b,
+    output wire out
     );
 
     wire n_a, n_b;
@@ -49,9 +49,9 @@ module _or(
 endmodule
 
 module _xor(
-    input a,
-    input b,
-    output out
+    input wire a,
+    input wire b,
+    output wire out
     );
 
     wire a_or_b, not_a_and_not_b;
