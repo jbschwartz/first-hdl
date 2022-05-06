@@ -1,18 +1,19 @@
 `timescale 1ns / 1ps
 
 module adders_tb;
+    localparam N = 32;
     reg a, b, c;
-    reg [31:0] a32;
-    reg [31:0] b32;
+    reg [N-1:0] a32;
+    reg [N-1:0] b32;
 
     wire half_sum, half_carry, sum, carry;
-    wire [31:0] out32;
+    wire [N-1:0] out32;
 
     half_adder half_adder(.a(a), .b(b), .sum(half_sum), .carry(half_carry));
 
     adder adder(.a(a), .b(b), .c(c), .sum(sum), .carry(carry));
 
-    add32 add32(.a(a32), .b(b32), .out(out32));
+    addn #(.N(N)) add32(.a(a32), .b(b32), .out(out32));
 
     initial
     begin
