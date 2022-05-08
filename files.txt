@@ -1,6 +1,8 @@
 ../src/adders.v
 ../src/gates.v
 ../src/gates_multi.v
+../src/register.v
 ../tests/adders_tb.v
 ../tests/gates_tb.v
 ../tests/gates_multi_tb.v
+../tests/register_tb.v
