@@ -7,7 +7,7 @@ module notn #(
 
     genvar i;
 
-    for(i = 0; i <= N - 1; i = i + 1) _not _not(.in(in[i]), .out(out[i]));
+    for(i = 0; i < N; i = i + 1) _not _not(.in(in[i]), .out(out[i]));
 
 endmodule
 
@@ -21,7 +21,7 @@ module andn #(
 
     genvar i;
 
-    for(i = 0; i <= N - 1; i = i + 1) _and _and(.a(a[i]), .b(b[i]), .out(out[i]));
+    for(i = 0; i < N; i = i + 1) _and _and(.a(a[i]), .b(b[i]), .out(out[i]));
 
 endmodule
 
@@ -35,7 +35,7 @@ module orn #(
 
     genvar i;
 
-    for(i = 0; i <= N - 1; i = i + 1) _or _or(.a(a[i]), .b(b[i]), .out(out[i]));
+    for(i = 0; i < N; i = i + 1) _or _or(.a(a[i]), .b(b[i]), .out(out[i]));
 
 endmodule
 
@@ -50,6 +50,6 @@ module muxn #(
 
     genvar i;
 
-    for(i = 0; i <= N - 1; i = i + 1) mux mux(.a(a[i]), .b(b[i]), .sel(sel), .out(out[i]));
+    for(i = 0; i < N; i = i + 1) mux mux(.a(a[i]), .b(b[i]), .sel(sel), .out(out[i]));
 
 endmodule

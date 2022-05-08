@@ -17,8 +17,7 @@ module gates_multi_tb;
     orn #(.N(N)) orn(.a(a), .b(b), .out(or_out));
     muxn #(.N(N)) muxn(.a(a), .b(b), .sel(sel), .out(mux_out));
 
-    initial
-    begin
+    initial begin
         a = 'hAAAAAAAA; b = 'hAAAA5555; #10
         if(not_out !== 'h55555555)
             $display("[FAILED] NOT%d('hAAAAAAAA) != 'h55555555 (got %h)", N, not_out);

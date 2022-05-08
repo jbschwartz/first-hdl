@@ -15,8 +15,7 @@ module adders_tb;
 
     addn #(.N(N)) add32(.a(a32), .b(b32), .out(out32));
 
-    initial
-    begin
+    initial begin
         a = 0; b = 0; c = 0; #10
         if(half_sum !== 0) $display("[FAILED] HALF_ADDER(0, 0).SUM != 0 (got %d)", half_sum);
         if(half_carry !== 0) $display("[FAILED] HALF_ADDER(0, 0).CARRY != 0 (got %d)", half_carry);
@@ -73,10 +72,8 @@ module adders_tb;
         if(sum !== 1) $display("[FAILED] ADDER(1, 1, 1).SUM != 1 (got %d)", sum);
         if(carry !== 1) $display("[FAILED] ADDER(1, 1, 1).CARRY != 1 (got %d)", carry);
 
-
         a32 = 'h55555555; b32 = 'hAAAAAAAA; #10
         if(out32 !== 'hFFFFFFFF) $display("[FAILED] ADD32(0x5555.5555, 0xAAAA.AAAA) != 0xFFFF.FFFF (got %h)", out32);
-
     end
 
 endmodule
