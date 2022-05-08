@@ -23,11 +23,7 @@ module gates_tb;
     mux mux(.a(a), .b(b), .sel(sel), .out(mux_out));
     demux demux(.in(in), .a(demux_a_out), .b(demux_b_out), .sel(sel));
 
-    initial
-    begin
-        $dumpfile("gates_tb.vcd");
-        $dumpvars(0, gates_tb);
-
+    initial begin
         a = 0; b = 0; #10
         if(nand_out !== 1) $display("[FAILED] NAND(0, 0) != 1 (got %d)", nand_out);
         if(not_out !== 1) $display("[FAILED] NOT(0) != 1 (got %d)", not_out);

@@ -6,3 +6,4 @@
 ../tests/gates_tb.v
 ../tests/gates_multi_tb.v
 ../tests/register_tb.v
+../tests/top_tb.v
