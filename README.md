@@ -12,3 +12,21 @@ Install Icarus Verilog. Run the following from the command line from this direct
 > mkdir build && cd build
 > iverilog -o first_hdl.out -c ../files.txt && vvp first_hdl.out
 ```
+
+This can be configured as a VS Code build task:
+
+```
+{
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cd build && iverilog -o first_hdl.out -c ../files.txt && vvp first_hdl.out",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
+```
